@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <title>Music | Player</title>
+</head>
+<body>
+    <h1 class="title">Music Player</h1>
+    <div class="library-container">
+        <form action="/songs" method="post" enctype="multipart/form-data">
+            <%- include('new_song') %>
+        </form>
+        <div class="main-library-container visible">
+            <h3 class="users-name">Welcome <%= name %>!</h3>
+            <div class="folders-header">
+                <h3 class="folders-title">Your Folders</h3>
+                <form class="new-folder-form" action="/folders" method="post">
+                    <input data-new-list-input required value="" type="text" class="new folders" name="folderName" placeholder="new folder name" aria-label="new folder name"/>
+                    <button type="submit" class="btn create-folder" aria-label="create new folder"><img src="/images/folder-plus.svg" alt="+"></button>
+                </form>
+            </div>
+            <div class="folders-container">
+                <% folders.forEach((folder) => { %>
+                  <div class="folder" data-folder-id="<%= folder._id %>">
+                    <div class="folder-deleting-container">
+                        <img class="folder-image" src="/images/folder.svg" alt="">
+                        <form class="folder-deleting-form" action="/folders/<%= folder.id %>?_method=DELETE" method="post">
+                            <button type="submit" class="song-deleting"><img class="folder-deleting-image" src="/images/x-circle.svg" alt=""></button>
+                        </form>
+                    </div>
+                    <span id="folder-name" class="folder-name"><%= folder.folderName %></span>
+                  </div>
+                <% }) %>
+            </div>
+        </div>
+        <div class="oppened-folder-container">
+            <div class="oppened-folder-container-header">
+                <button class="back-button"><img class="back-button-image" src="/images/arrow-left.svg" alt=""></button>
+                <span class="add-song-popup">Add new Song</span>
+                <div class="all-songs">
+                    <h4 id="my-container" class="my-container"></h4>
+                    <button class="add-song-title" id="add-song-title"><img class="add-song-title-image" src="/images/plus-circle.svg" alt=""></button>
+                </div>
+            </div>
+            <div class="all-your-songs">
+                <% songs.forEach(song =>{ %>
+                <div data-folder-id="<%= song.songFolder %>" data-song-path="<%= song.songPath %>" class="song-container">
+                    <h4 class="library-song-title"><%= song.songName %></h4>
+                    <h4 class="library-song-artist"><%= song.singer%></h4>
+                    <div class="card-subtitle"> <%=song.createdAt.toLocaleDateString()%></div>
+                    <form class="d-inline" action="/songs/<%= song.id %>?_method=DELETE" method="post">
+                        <button type="submit" class="song-deleting"><img class="song-deleting-image" src="/images/trash-2.svg" alt=""></button>
+                    </form>
+                </div>
+                <%  }) %>
+            </div>
+        </div>
+    </div>
+    <div class="music-container">
+        <div class="music-info">
+            <h4 id="song-title" class="song-title"></h4>
+            <h6 id="song-artist" class="song-artist"></h6>
+            <audio id="audio" src=""></audio>
+            <div class="progress-container">
+                <div class="progress"></div>
+            </div>
+        </div>
+        <div class="img-container">
+            <img class="logo-image" src="images/colorful-music-notes-modified.png">
+        </div>
+        <div class="navigation">
+            <button id="previous" class="action-btn"><img id="icon" src="images/skip-back.svg"></button>
+            <div class="play-pause-container">
+                <button id="play" class="action-btn big-btn"><img id="icon" src="images/play-circle.svg"></button>
+                <button id="pause" class="action-btn big-btn"><img id="icon" src="images/pause-circle.svg"></button>
+            </div>
+            <button id="next" class="action-btn"><img id="icon" src="images/skip-forward.svg"></button>
+        </div>
+    </div>
+    <form class="log-out" action="/logout?_method=DELETE" method="post">
+        <button class="log-out-btn" type="submit">Log Out</button>
+    </form>
+</body>
+</html>

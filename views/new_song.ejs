@@ -1,0 +1,16 @@
+<div class="new-song-container" id="new-song-container">
+    <button id="x-button" class="x-button">x</button>
+    <input required id="songFolder" type="hidden" name="songFolder" value="<%= songs.songFolder %>">
+    <div clasnode --trace-deprecation ...s="form-group">
+        <label class="form-label" for="title">Song Name:</label>
+        <input required value="<%= songs.songName %>" class="form-control form-input" type="text" name="songName" id="songName">
+    </div>
+    <div class="singer-container">
+        <label  class="form-label"  for="singer">Singers Name:</label>
+        <input required type="text" name="singer" id="singer" class="form-control form-input"><%= songs.singer %></input>
+    </div>
+    <div class="song-input-container">
+        <input value="<%= songs.songPath %>" class="form-control song-container-input" type="file" name="uploaded_file" id="uploaded_file">
+    </div>
+    <button class="save-song-button" type="submit">Save Song</button>
+</div>
