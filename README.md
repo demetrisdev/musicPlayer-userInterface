@@ -34,6 +34,6 @@
 
 <div align='center'>
 <img src='https://github.com/demetrisdev/mern-cigarettes-counter/assets/112802137/92b0266f-3205-4511-8a38-5e57af6feb75'/>  
-<img src='https://github.com/demetrisdev/mern-cigarettes-counter/assets/112802137/be0482b1-327d-4471-acf1-bfd6509e679a'/>
 <img src='https://github.com/demetrisdev/mern-cigarettes-counter/assets/112802137/225b1d94-5c25-4127-b946-6ac8f1bf4786'/>
+<img src='https://github.com/demetrisdev/mern-cigarettes-counter/assets/112802137/be0482b1-327d-4471-acf1-bfd6509e679a'/>
 </div>
