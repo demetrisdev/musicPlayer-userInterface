@@ -12,6 +12,7 @@
 
 » Vanilla CSS <br>
 » JSX <br>
+» Vanilla JavaScript <br>
 » MongoDB <br>
 » Node.js <br>
 » Express.js
