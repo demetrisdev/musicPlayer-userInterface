@@ -4,7 +4,6 @@ if(process.env.NODE_ENV !== 'production'){
 
 const express = require('express')
 const Songs = require('./models/songs')
-const Folders = require('./models/folder')
 const mongoose = require('mongoose')
 const session = require('express-session');
 const usersRouter = require('./routes/login')

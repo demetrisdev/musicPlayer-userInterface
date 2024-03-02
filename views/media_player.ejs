@@ -7,8 +7,11 @@
     <script defer src="script.js"></script>
     <title>Music | Player</title>
 </head>
-<body>
-    <h1 class="title">Music Player</h1>
+<body class="body-music-player">
+    <div class="main-logo-image">
+        <img src="./images/music-player.png" />
+        <span>MusPlay</span>
+    </div>
     <div class="library-container">
         <form action="/songs" method="post" enctype="multipart/form-data">
             <%- include('new_song') %>

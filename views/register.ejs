@@ -15,19 +15,20 @@
     </div>
     <form action="/users/register" method="post">
         <div>
-            <label class="m-3 mb-0 display-10" for="name">Name and Surname</label>
+            <label class="m-3 mb-0 display-10" for="name">Username</label>
             <input type="text" id="name" name="name" required>
         </div>
         <div>
             <label class="m-3 mt-3 display-10" for="password">Password</label>
             <input type="password" id="password" name="password" required>
         </div>
-        <button class="m-3 btn btn-primary" type="submit" onclick="showMessage()">Register</button>
+        <div class="btn-container">
+            <button class="m-3 btn btn-primary" type="submit" onclick="showMessage()">Register</button>
+            <a  class="m-3 btn btn-secondary" href="/users/login">Login</a>
+            <a  class="m-3 display-10 btn btn-danger" href="/">Back</a>
+        </div>
     </form>
-    <div>
-        <a  class="m-3 btn btn-secondary" href="/users/login">Login</a>
-        <a  class="m-3 display-10 btn btn-danger" href="/">Back to the Blog</a>
-    </div>
+
     <script>
         function showMessage() {
             document.getElementById("success-message").style.display = "block";
