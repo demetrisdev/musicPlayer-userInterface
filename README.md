@@ -3,7 +3,7 @@
 <h2>About the project</h2>
 
 <p>This is an online API built using  <strong>MongoDB, Express.js, EJS and Node.js</strong>. 
-  It's purpose is to help the users upload and listen freely their music. It implements a personalized <strong>Login System, Register System</strong>
+  Its purpose is to help users upload and listen freely their music. It implements a personalized <strong>Login System, Register System</strong>
   as well as a <strong>File System</strong>, so that the user can upload there music and listen to it, in a simple to use yet elegant
   system! It is a <strong>fully responsive API!</strong>
   </p>
