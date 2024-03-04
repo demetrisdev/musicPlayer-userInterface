@@ -11,6 +11,7 @@
 <h3>Build with:</h3>
 
 » Vanilla CSS <br>
+» Bootstrap <br>
 » JSX <br>
 » Vanilla JavaScript <br>
 » MongoDB <br>
